@@ -1,0 +1,65 @@
+﻿@model MigrationExample08_02_2022.Models.Movies
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="container">
+    <div class="row">
+    <div class="col-md-4">
+        <div class="tm-paging-links">
+            <nav>
+                <ul style="list-style: none;">
+                   
+                        @if (Model.movie.Category.CategoryID == 1)
+                        {
+                <li><a href="#" class="tm-paging-link active">Komedi</a></li>
+                <li><a href="#" class="tm-paging-link">Korku</a></li>
+                <li><a href="#" class="tm-paging-link">Romantik</a></li>
+                <li><a href="#" class="tm-paging-link">Bilim Kurgu</a></li>
+                        }
+                        else if (Model.movie.Category.CategoryID == 2)
+                        {
+                <li><a href="#" class="tm-paging-link">Komedi</a></li>
+                <li><a href="#" class="tm-paging-link active">Korku</a></li>
+                <li><a href="#" class="tm-paging-link">Romantik</a></li>
+                <li><a href="#" class="tm-paging-link">Bilim Kurgu</a></li>
+                        }
+                        else if (Model.movie.Category.CategoryID == 3)
+                        {
+                <li><a href="#" class="tm-paging-link">Komedi</a></li>
+                <li><a href="#" class="tm-paging-link">Korku</a></li>
+                <li><a href="#" class="tm-paging-link active">Romantik</a></li>
+                <li><a href="#" class="tm-paging-link">Bilim Kurgu</a></li>
+                        }
+                        else if (Model.movie.Category.CategoryID == 4)
+                        {
+                <li><a href="#" class="tm-paging-link">Komedi</a></li>
+                <li><a href="#" class="tm-paging-link">Korku</a></li>
+                <li><a href="#" class="tm-paging-link">Romantik</a></li>
+                <li><a href="#" class="tm-paging-link active">Bilim Kurgu</a></li>
+                        }
+                </ul>
+            </nav>
+        </div>           
+        </div>
+         <article class="col-lg-6">
+                <figure class="tm-person">
+                    <img src="~/img/@Model.movie.MovieImage" alt="Image" class="img-fluid tm-person-img" />
+                    <figcaption class="tm-person-description">
+                        <h4 class="tm-person-name">@Model.movie.MovieName</h4>
+                        <p class="tm-person-title">@Model.movie.MovieTitle</p>
+                        <p class="tm-person-about">
+                            @Model.movie.MovieDescription
+                        </p>
+                        <div>
+                            <p class="tm-gallery-price">@Model.movie.Category.CategoryName</p>
+                        </div>
+                    </figcaption>
+                </figure>
+            </article>
+    </div>
+       
+</div>
